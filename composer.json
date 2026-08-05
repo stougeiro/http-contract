@@ -1,0 +1,53 @@
+{
+    "name": "stougeiro/http-contract",
+    "description": "Minimal HTTP contract package defining the core interfaces for a plug-and-play web engine. Provides Request, Response, Router, Route, Middleware and Handler contracts for building modular, high-performance applications.",
+    "type": "library",
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "stougeiro",
+            "email": "sidneytougeiro@gmail.com"
+        }
+    ],
+    "keywords": [
+        "http",
+        "http-contract",
+        "http-core",
+        "http-interface",
+        "request",
+        "response",
+        "router",
+        "route",
+        "middleware",
+        "handler",
+        "pipeline",
+        "web-framework",
+        "modular",
+        "plugable",
+        "lightweight",
+        "high-performance"
+    ],
+    "support": {
+        "issues": "https://github.com/stougeiro/http-contract/issues",
+        "source": "https://github.com/stougeiro/http-contract"
+    },
+    "funding": [
+        {
+            "type": "buymeacoffee",
+            "url": "https://www.buymeacoffee.com/stougeiro"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "STDW\\Contract\\HTTP\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=8.1"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^2.2"
+    }
+}
