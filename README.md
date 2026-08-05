@@ -14,14 +14,12 @@ Install via Composer:
 composer require stougeiro/http-contract
 ```
 
-
 ## 🔧 Implementations
 
 Below is a list of known implementations maintained by the community.
 
 - `stougeiro/http`  
   Repository: https://github.com/stougeiro/http
-
 
 ---
 
