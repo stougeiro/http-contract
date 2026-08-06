@@ -5,35 +5,86 @@
 
     interface RequestInterface
     {
+        /** @return string 
+         */
         public function getMethod(): string;
 
+        /** @return UriInterface 
+         */
         public function getUri(): UriInterface;
 
+        /** @return array<string, string>
+         */
         public function getHeaders(): array;
 
+        /**
+         * @param string $name 
+         * @return null|string 
+         */
         public function getHeader(string $name): ?string;
 
+        /**
+         * @param string $name 
+         * @return bool 
+         */
         public function hasHeader(string $name): bool;
 
+        /** @return array<string, string> 
+         */
         public function getCookies(): array;
 
+        /** @return array<string, mixed> 
+         */
         public function getParams(): array;
 
+        /**
+         * @param string $key 
+         * @param null|string $cast 
+         * @return mixed 
+         */
         public function param(string $key, ?string $cast = null): mixed;
 
+        /** @return mixed 
+         */
         public function getBody(): mixed;
 
+        /**
+         * @param string $key 
+         * @param null|string $cast 
+         * @return mixed 
+         */
         public function input(string $key, ?string $cast = null): mixed;
 
+        /** @return array<string, UploadedFileInterface|array<int, UploadedFileInterface>>
+         */
         public function getUploadedFiles(): array;
 
+        /**
+         * @param string $name 
+         * @return null|UploadedFileInterface 
+         */
         public function getUploadedFile(string $name): ?UploadedFileInterface;
 
+        /** @return array<string, mixed> 
+         */
         public function getAttributes(): array;
 
+        /**
+         * @param string $name 
+         * @return mixed 
+         */
         public function getAttribute(string $name): mixed;
 
+        /**
+         * @param string $name 
+         * @param mixed $value 
+         * @return RequestInterface 
+         */
         public function withAttribute(string $name, mixed $value): RequestInterface;
 
+        /**
+         * @param string $name 
+         * @return RequestInterface 
+         */
         public function withoutAttribute(string $name): RequestInterface;
     }
