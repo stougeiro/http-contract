@@ -7,7 +7,7 @@
     {
         public function add(MiddlewareInterface $middleware): void;
 
-        public function setFinal(MiddlewareInterface $middleware): void;
+        public function setFinalHandler(MiddlewareInterface $middleware): void;
 
         public function handle(RequestInterface $request, ResponseInterface $response): ResponseInterface;
     }
