@@ -4,7 +4,7 @@
 
 A set of stable, framework‑independent contracts that define the core abstractions required to implement HTTP servers, middleware pipelines, and request/response handling in PHP.
 
-These interfaces establish consistent patterns for HTTP processing, middleware chaining, URI parsing, file uploads, and response construction — following a lightweight, expressive, and practical approach focused on how HTTP is actually used in real applications. Rather than adopting the more formal PSR‑7/PSR‑15 model, this package intentionally chooses a simpler API that avoids streams and artificial immutability, reflecting the real‑world lifecycle of a request and offering a design closer to modern express‑style frameworks while prioritizing clarity and performance.
+These interfaces establish consistent patterns for HTTP processing, middleware chaining, URI parsing, file uploads, and response construction — following a lightweight, expressive, and practical approach focused on how HTTP is actually used in real applications. Rather than adopting the more formal PSR‑7/PSR‑15 model, this package intentionally chooses a simpler API focused on clarity and performance, reflecting the real‑world lifecycle of a request and offering a design closer to modern express‑style frameworks while maintaining a consistent and predictable structure.
 
 The goal of this package is to provide clear, explicit, and performance‑oriented contracts that can be adopted by any HTTP framework, micro‑framework, router, or modular application architecture.
 
