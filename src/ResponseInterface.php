@@ -44,9 +44,9 @@
          */
         public function withoutHeader(string $name): ResponseInterface;
 
-        /** @return mixed 
+        /** @return null|string 
          */
-        public function getBody(): mixed;
+        public function getBody(): ?string;
 
         /**
          * @param mixed $body 
