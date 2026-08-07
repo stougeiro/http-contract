@@ -41,7 +41,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "STDW\\Contract\\HTTP\\": "src/"
+            "STDW\\Contract\\Http\\": "src/"
         }
     },
     "require": {
