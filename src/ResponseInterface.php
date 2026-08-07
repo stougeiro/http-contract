@@ -49,10 +49,10 @@
         public function getBody(): ?string;
 
         /**
-         * @param mixed $body 
+         * @param null|string $body 
          * @return ResponseInterface 
          */
-        public function withBody(mixed $body): ResponseInterface;
+        public function withBody(?string $body): ResponseInterface;
 
         /** @return void 
          */
