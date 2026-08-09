@@ -10,8 +10,8 @@
          *     name: string,
          *     type: string,
          *     tmp_name: string,
-         *     error: int,
-         *     size: int
+         *     size: int,
+         *     error: int
          * } $data
          * @return UploadedFileInterface 
          */
@@ -21,8 +21,8 @@
          *     name: string,
          *     type: string,
          *     tmp_name: string,
-         *     error: int,
-         *     size: int
+         *     size: int,
+         *     error: int
          *  } $data
          */
         public function getRawData(): array;
@@ -35,13 +35,13 @@
          */
         public function getType(): string;
 
-        /** @return int 
-         */
-        public function getSize(): int;
-
         /** @return null|string 
          */
         public function getTmpName(): ?string;
+
+        /** @return int 
+         */
+        public function getSize(): int;
 
         /** @return int 
          */
@@ -51,23 +51,19 @@
          */
         public function getErrorMessage(): ?string;
 
-        /** @return string 
+        /** @return null|string 
          */
-        public function getPath(): string;
-
-        /** @return string 
-         */
-        public function getFilename(): string;
+        public function getPath(): ?string;
 
         /**
-         * @param string $filename 
+         * @param string $name 
          * @return UploadedFileInterface 
          */
-        public function withName(string $filename): UploadedFileInterface;
+        public function withName(string $name): UploadedFileInterface;
 
         /**
-         * @param string $targetPath 
+         * @param string $path 
          * @return void 
          */
-        public function moveTo(string $targetPath): void;
+        public function moveTo(string $path): void;
     }
