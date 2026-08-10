@@ -2,9 +2,16 @@
 
     namespace STDW\Contract\Http;
 
+    use Stringable;
 
-    interface UriInterface
+    interface UriInterface extends Stringable
     {
+        /**
+         * @param string $url 
+         * @return UriInterface 
+         */
+        public static function fromUrl(string $url): UriInterface;
+
         /**
          * @param array{
          *     scheme?: string,
