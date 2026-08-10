@@ -61,15 +61,15 @@
          */
         public function input(string $key, mixed $default = null): mixed;
 
-        /** @return array<string, UploadedFileInterface|array<int, UploadedFileInterface>>
+        /** @return array<string, array<int, UploadedFileInterface>|UploadedFileInterface>
          */
         public function getUploadedFiles(): array;
 
         /**
          * @param string $name 
-         * @return null|UploadedFileInterface 
+         * @return null|array<int, UploadedFileInterface>|UploadedFileInterface 
          */
-        public function getUploadedFile(string $name): ?UploadedFileInterface;
+        public function getUploadedFile(string $name): null|array|UploadedFileInterface;
 
         /** @return array<string, mixed> 
          */
