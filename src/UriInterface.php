@@ -20,7 +20,7 @@
          *     user?: null|string,
          *     pass?: null|string,
          *     path?: string,
-         *     query?: array<string, mixed>,
+         *     query?: array<mixed>,
          *     fragment?: null|string
          * } $data
          * @return UriInterface 
@@ -55,7 +55,7 @@
          */
         public function getPath(): string;
 
-        /** @return array<string, mixed>  
+        /** @return array<mixed> 
          */
         public function getQuery(): array;
 
