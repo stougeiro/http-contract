@@ -45,10 +45,10 @@
 
         /**
          * @param string $key 
-         * @param null|string $cast 
+         * @param mixed $default 
          * @return mixed 
          */
-        public function param(string $key, ?string $cast = null): mixed;
+        public function param(string $key, mixed $default = null): mixed;
 
         /** @return mixed 
          */
@@ -56,10 +56,10 @@
 
         /**
          * @param string $key 
-         * @param null|string $cast 
+         * @param mixed $default 
          * @return mixed 
          */
-        public function input(string $key, ?string $cast = null): mixed;
+        public function input(string $key, mixed $default = null): mixed;
 
         /** @return array<string, UploadedFileInterface|array<int, UploadedFileInterface>>
          */
