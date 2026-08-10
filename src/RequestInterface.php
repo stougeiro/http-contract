@@ -29,9 +29,15 @@
          */
         public function hasHeader(string $name): bool;
 
-        /** @return array<string, string> 
+        /** @return array<string, mixed> 
          */
         public function getCookies(): array;
+
+        /**
+         * @param string $name 
+         * @return null|array<string, mixed> 
+         */
+        public function getCookie(string $name): ?array;
 
         /** @return array<string, mixed> 
          */
