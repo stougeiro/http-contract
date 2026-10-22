@@ -24,6 +24,9 @@ The goal of this package is to provide clear, explicit, and performance‑orient
 - **Simple, real‑world Request and Response contracts**  
   No streams, no artificial immutability, no conceptual overhead — just the essential methods needed to read input and produce output.
 
+- **State transfer between responses**  
+  `from()` copies what the target response can internalize — headers, cookies, and status/body where accepted — without touching constructors, so a response can be re-typed mid-pipeline.
+
 - **Precise UploadedFile abstraction**  
   Strongly typed metadata (name, type, tmp_name, error, size) fully compatible with PHPStan Level 9 and aligned with the actual structure of $_FILES.
 

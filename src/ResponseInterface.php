@@ -1,118 +1,124 @@
 <?php declare(strict_types=1);
 
-    namespace STDW\Contract\Http;
+namespace STDW\Contract\Http;
 
 
-    interface ResponseInterface
-    {
-        /** @return int 
-         */
-        public function getStatus(): int;
+interface ResponseInterface
+{
+    /**
+     * @param ResponseInterface $response 
+     * @return ResponseInterface 
+     */
+    public function from(ResponseInterface $response): ResponseInterface;
 
-        /**
-         * @param int $code 
-         * @return ResponseInterface 
-         */
-        public function withStatus(int $code): ResponseInterface;
+    /** @return int 
+     */
+    public function getStatus(): int;
 
-        /** @return array<string, string>
-         */
-        public function getHeaders(): array;
+    /**
+     * @param int $code 
+     * @return ResponseInterface 
+     */
+    public function withStatus(int $code): ResponseInterface;
 
-        /**
-         * @param string $name 
-         * @return null|string 
-         */
-        public function getHeader(string $name): ?string;
+    /** @return array<string, string>
+     */
+    public function getHeaders(): array;
 
-        /**
-         * @param string $name 
-         * @return bool 
-         */
-        public function hasHeader(string $name): bool;
+    /**
+     * @param string $name 
+     * @return null|string 
+     */
+    public function getHeader(string $name): ?string;
 
-        /**
-         * @param string $name 
-         * @param string $value 
-         * @return ResponseInterface 
-         */
-        public function withHeader(string $name, string $value): ResponseInterface;
+    /**
+     * @param string $name 
+     * @return bool 
+     */
+    public function hasHeader(string $name): bool;
 
-        /**
-         * @param string $name 
-         * @return ResponseInterface 
-         */
-        public function withoutHeader(string $name): ResponseInterface;
+    /**
+     * @param string $name 
+     * @param string $value 
+     * @return ResponseInterface 
+     */
+    public function withHeader(string $name, string $value): ResponseInterface;
 
-        /**
-         * @return array<string, array{
-         *     name: string,
-         *     value: string,
-         *     options: array{
-         *         expires?: int,
-         *         path?: string,
-         *         domain?: string,
-         *         secure?: bool,
-         *         httponly?: bool,
-         *         samesite?: 'Lax'|'lax'|'None'|'none'|'Strict'|'strict'
-         *     }
-         * }>
-         */
-        public function getCookies(): array;
+    /**
+     * @param string $name 
+     * @return ResponseInterface 
+     */
+    public function withoutHeader(string $name): ResponseInterface;
 
-        /**
-         * @param string $name
-         * @return null|array{
-         *     name: string,
-         *     value: string,
-         *     options: array{
-         *         expires?: int,
-         *         path?: string,
-         *         domain?: string,
-         *         secure?: bool,
-         *         httponly?: bool,
-         *         samesite?: 'Lax'|'lax'|'None'|'none'|'Strict'|'strict'
-         *     }
-         * }
-         */
-        public function getCookie(string $name): ?array;
+    /**
+     * @return array<string, array{
+     *     name: string,
+     *     value: string,
+     *     options: array{
+     *         expires?: int,
+     *         path?: string,
+     *         domain?: string,
+     *         secure?: bool,
+     *         httponly?: bool,
+     *         samesite?: 'Lax'|'lax'|'None'|'none'|'Strict'|'strict'
+     *     }
+     * }>
+     */
+    public function getCookies(): array;
 
-        /**
-         * @param string $name 
-         * @param string $value 
-         * @param array{
-         *     expires?: int,
-         *     path?: string,
-         *     domain?: string,
-         *     secure?: bool,
-         *     httponly?: bool,
-         *     samesite?: 'Lax'|'lax'|'None'|'none'|'Strict'|'strict'
-         * } $options 
-         * @return ResponseInterface 
-         */
-        public function withCookie(string $name, string $value, array $options = []): ResponseInterface;
+    /**
+     * @param string $name
+     * @return null|array{
+     *     name: string,
+     *     value: string,
+     *     options: array{
+     *         expires?: int,
+     *         path?: string,
+     *         domain?: string,
+     *         secure?: bool,
+     *         httponly?: bool,
+     *         samesite?: 'Lax'|'lax'|'None'|'none'|'Strict'|'strict'
+     *     }
+     * }
+     */
+    public function getCookie(string $name): ?array;
 
-        /**
-         * @param string $name 
-         * @return ResponseInterface 
-         */
-        public function withoutCookie(string $name): ResponseInterface;
+    /**
+     * @param string $name 
+     * @param string $value 
+     * @param array{
+     *     expires?: int,
+     *     path?: string,
+     *     domain?: string,
+     *     secure?: bool,
+     *     httponly?: bool,
+     *     samesite?: 'Lax'|'lax'|'None'|'none'|'Strict'|'strict'
+     * } $options 
+     * @return ResponseInterface 
+     */
+    public function withCookie(string $name, string $value, array $options = []): ResponseInterface;
 
-        /** @return ResponseInterface 
-         */
-        public function clearCookies(): ResponseInterface;
+    /**
+     * @param string $name 
+     * @return ResponseInterface 
+     */
+    public function withoutCookie(string $name): ResponseInterface;
 
-        /** @return null|string 
-         */
-        public function getBody(): ?string;
+    /** @return ResponseInterface 
+     */
+    public function clearCookies(): ResponseInterface;
 
-        /**
-         * @param null|string $body 
-         * @return ResponseInterface 
-         */
-        public function withBody(?string $body): ResponseInterface;
+    /** @return null|string 
+     */
+    public function getBody(): ?string;
 
-        /** @return void 
-         */
-        public function send(): void;
-    }
+    /**
+     * @param null|string $body 
+     * @return ResponseInterface 
+     */
+    public function withBody(?string $body): ResponseInterface;
+
+    /** @return void 
+     */
+    public function send(): void;
+}
